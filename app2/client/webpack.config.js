@@ -19,7 +19,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: 'http://localhost:3004/',
+    publicPath: 'auto',
     chunkFilename: '[id].[contenthash].js',
   },
   module: {

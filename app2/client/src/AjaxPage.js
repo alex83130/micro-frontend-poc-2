@@ -47,7 +47,7 @@ export default function AjaxPage() {
   const [html, setHTML] = useState('');
 
   useLayoutEffect(() => {
-    fetch(`http://localhost:${process.env.PORT}/api/ajax`)
+    fetch(`${__webpack_public_path__}api/ajax`)
       .then((res) => res.text())
       .then((data) => {
         //loadjscssfile(data.js, "js")
