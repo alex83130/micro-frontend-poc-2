@@ -39,7 +39,7 @@ module.exports = {
       name: 'app2',
       filename: 'remoteEntry.js',
       remotes: {
-        shell: 'shell@http://localhost:3000/remoteEntry.js',
+        shell: 'shell@https://poc-microfrontend-shell.herokuapp.com/remoteEntry.js',
       },
       exposes: {
         './routes': './src/routes',

@@ -6,11 +6,13 @@
     "serve": "lerna run --scope @micro-frontend-poc/* --parallel serve",
     "clean": "lerna run --scope @micro-frontend-poc/* --parallel clean",
     "postinstall": "lerna --scope @micro-frontend-poc/* bootstrap",
+    "heroku": "concurrently \"npm run heroku-shell\" \"npm run heroku-app1\" \"npm run heroku-app2\"",
     "heroku-shell": "git subtree push --prefix shell heroku-shell master",
     "heroku-app1": "git subtree push --prefix app1 heroku-app1 master",
     "heroku-app2": "git subtree push --prefix app2 heroku-app2 master"
   },
   "devDependencies": {
+    "concurrently": "^6.2.1",
     "lerna": "3.22.1",
     "prettier": "2.3.2",
     "webpack": "^5.42.1",
