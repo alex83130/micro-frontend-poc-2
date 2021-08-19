@@ -8,7 +8,7 @@
     "server-start": "nodemon ./server.js",
     "client-start": "cd client && npm start",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "heroku-prebuild": "npm install --dev",
+    "heroku-prebuild": "cd client && npm install --dev",
     "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "keywords": [],
