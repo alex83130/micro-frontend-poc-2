@@ -1,4 +1,4 @@
 {
-  "packages": ["shell/client", "shell/server","app1/client", "app1/server", "app2/client", "app2/server", "app3/client", "app3/server"],
+  "packages": ["shell/client", "shell","app1/client", "app1", "app2/client", "app2", "app3/client", "app3"],
   "version": "0.0.0"
 }

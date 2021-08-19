@@ -1,13 +1,14 @@
 import React from 'react';
 import { makeStyles, CircularProgress, Typography } from '@material-ui/core';
 //const Shell = React.lazy(() => import("shell/Shell"));
-import AjaxPage from './AjaxPage';
+//import AjaxPage from './AjaxPage';
+const ShellLegacy = React.lazy(() => import('shell/ShellLegacy'));
 
 function App() {
   return (
-    <React.Suspense fallback={<LoadingShell />}>
+    <React.Suspense fallback={<></>}>
       {/*<Shell />*/}
-      <AjaxPage />
+      <ShellLegacy />
     </React.Suspense>
   );
 }
@@ -29,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function LoadingShell() {
+/*function LoadingShell() {
   const classes = useStyles();
   return (
     <div className={classes.root}>
@@ -37,6 +38,6 @@ function LoadingShell() {
       <Typography className={classes.text}>Loading Shell</Typography>
     </div>
   );
-}
+}*/
 
 export default App;

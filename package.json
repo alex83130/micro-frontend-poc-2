@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "start": "lerna run --scope @micro-frontend-poc/* --parallel start",
+    "start": "lerna run --scope @micro-frontend-poc/*-server --parallel start",
     "build": "lerna run --scope @micro-frontend-poc/* build",
     "serve": "lerna run --scope @micro-frontend-poc/* --parallel serve",
     "clean": "lerna run --scope @micro-frontend-poc/* --parallel clean",

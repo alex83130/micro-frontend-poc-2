@@ -5,12 +5,12 @@ const IframePage = React.lazy(() => import('./IframePage'));
 
 const routes = [
   {
-    path: '/app2-ajax',
+    path: '/app2/ajax',
     component: AjaxPage,
     exact: true,
   },
   {
-    path: '/app2-iframe',
+    path: '/app2/iframe',
     component: IframePage,
     exact: true,
   },

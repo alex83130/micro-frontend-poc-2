@@ -13,7 +13,6 @@ import { Link, useLocation } from 'react-router-dom';
 //import DashboardNavigation from "dashboard/Navigation";
 import App1Navigation from 'app1/Navigation';
 import App2Navigation from 'app2/Navigation';
-import App3Navigation from 'app3/Navigation';
 
 const useStyles = makeStyles((theme) => ({
   toolbarIcon: {
@@ -79,7 +78,6 @@ function Navigation(props) {
       <List>
         <App1Navigation />
         <App2Navigation />
-        <App3Navigation />
         <Divider />
       </List>
     </Drawer>

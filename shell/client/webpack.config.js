@@ -2,6 +2,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ModuleFederationPlugin = require('webpack').container.ModuleFederationPlugin;
 const path = require('path');
 const deps = require('./package.json').dependencies;
+const Dotenv = require('dotenv-webpack');
+
 module.exports = {
   entry: './src/index',
   mode: 'development',
@@ -11,9 +13,9 @@ module.exports = {
     historyApiFallback: true,
     hot: false,
     hotOnly: false,
-    /*    proxy: {
-      '/orders': 'http://localhost:3001',
-    },*/
+    proxy: {
+      '/api': 'http://localhost:3001',
+    },
   },
   output: {
     path: path.resolve(__dirname, './dist'),
@@ -39,7 +41,6 @@ module.exports = {
       remotes: {
         app1: 'app1@http://localhost:3002/remoteEntry.js',
         app2: 'app2@http://localhost:3004/remoteEntry.js',
-        app3: 'app3@http://localhost:3006/remoteEntry.js',
       },
       exposes: {
         './Shell': './src/Shell',
@@ -71,6 +72,9 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: './public/index.html',
+    }),
+    new Dotenv({
+      path: '../.env',
     }),
   ],
 };
