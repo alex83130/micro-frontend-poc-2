@@ -15,7 +15,10 @@ const setItem = (key, value, numberOfDays) => {
   // set the time to be now + numberOfDays
   now.setTime(now.getTime() + numberOfDays * 60 * 60 * 24 * 1000);
 
-  document.cookie = `${key}=${value}; expires=${now.toUTCString()}; path=/`;
+  console.log('process', process.env);
+  const domain = process.env.NODE_ENV === 'production' ? '.herokuapp.com' : 'localhost';
+
+  document.cookie = `${key}=${value}; expires=${now.toUTCString()}; path=/; domain=${domain};`;
 };
 
 const convertBoolean = (value) => (value === 'true' ? true : value === 'false' ? false : value);
