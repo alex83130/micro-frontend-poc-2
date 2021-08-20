@@ -20,10 +20,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath:
-      dotenv.LOCALHOST === 'true'
-        ? 'http://localhost:3004/'
-        : 'https://poc-microfrontend-app2.herokuapp.com/',
+    publicPath: dotenv.APP2_URL,
     chunkFilename: '[id].[contenthash].js',
   },
   module: {
@@ -43,11 +40,7 @@ module.exports = {
       name: 'app2',
       filename: 'remoteEntry.js',
       remotes: {
-        shell: `shell@${
-          dotenv.LOCALHOST === 'true'
-            ? 'http://localhost:3000'
-            : 'https://poc-microfrontend-shell.herokuapp.com'
-        }/remoteEntry.js`,
+        shell: `shell@${dotenv.SHELL_URL}remoteEntry.js`,
       },
       exposes: {
         './routes': './src/routes',

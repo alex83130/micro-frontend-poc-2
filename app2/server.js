@@ -144,11 +144,7 @@ app.get('/api/ssr', (req, res) => {
                  return false;
               };
           </script>
-          <script type="text/javascript" src="${
-            process.env.LOCALHOST === 'true'
-              ? 'http://localhost:3004'
-              : 'https://poc-microfrontend-app2.herokuapp.com'
-          }/main.js"></script>
+          <script type="text/javascript" src="${process.env.APP2_URL}main.js"></script>
         </body>
       </html>`);
 });
