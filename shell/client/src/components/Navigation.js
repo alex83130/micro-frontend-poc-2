@@ -37,9 +37,6 @@ const useStyles = makeStyles((theme) => ({
 
 function Navigation(props) {
   const classes = useStyles();
-
-  console.log('props', props);
-
   return (
     <Drawer
       variant="permanent"

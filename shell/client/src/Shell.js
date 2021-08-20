@@ -12,8 +12,6 @@ import Alert from './components/Alert';
 export default function Shell() {
   const drawer = useDrawer();
 
-  console.log('drawer', drawer);
-
   return (
     <ServiceProvider>
       <BrowserRouter>

@@ -20,7 +20,10 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: 'auto',
+    publicPath:
+      dotenv.LOCALHOST === 'true'
+        ? 'http://localhost:3002/'
+        : 'https://poc-microfrontend-app1.herokuapp.com/',
     chunkFilename: '[id].[contenthash].js',
   },
   module: {

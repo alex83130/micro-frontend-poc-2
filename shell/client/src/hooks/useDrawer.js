@@ -8,14 +8,10 @@ function useDrawer() {
   return {
     open: !!cookie,
     closeDrawer() {
-      console.log('closeDrawer');
-
       //setItem(false);
       updateCookie(false);
     },
     openDrawer() {
-      console.log('openDrawer');
-
       //setItem(true);
       updateCookie(true);
     },
