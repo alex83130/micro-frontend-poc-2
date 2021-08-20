@@ -4,7 +4,7 @@ const path = require('path');
 const orders = require('./data');
 require('dotenv').config();
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3003;
 
 const app = express();
 app.use(cors());
@@ -12,8 +12,6 @@ app.use(cors());
 app.get('/api/orders', (req, res) => {
   res.json({ orders });
 });
-
-console.log('server', process.env.NODE_ENV);
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('./client/dist'));

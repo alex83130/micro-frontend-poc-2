@@ -1,8 +1,9 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 const ModuleFederationPlugin = require('webpack').container.ModuleFederationPlugin;
 const path = require('path');
 const deps = require('./package.json').dependencies;
-const Dotenv = require('dotenv-webpack');
+const dotenv = require('dotenv').config({ path: '../.env' }).parsed;
 
 module.exports = {
   entry: './src/index',
@@ -14,7 +15,7 @@ module.exports = {
     hot: false,
     hotOnly: false,
     proxy: {
-      '/api': 'http://localhost:3005',
+      '/api': `http://localhost:${dotenv.PORT}`,
     },
   },
   output: {
@@ -39,7 +40,11 @@ module.exports = {
       name: 'app2',
       filename: 'remoteEntry.js',
       remotes: {
-        shell: 'shell@https://poc-microfrontend-shell.herokuapp.com/remoteEntry.js',
+        shell: `shell@${
+          dotenv.LOCALHOST === 'true'
+            ? 'http://localhost:3000'
+            : 'https://poc-microfrontend-shell.herokuapp.com'
+        }/remoteEntry.js`,
       },
       exposes: {
         './routes': './src/routes',
@@ -62,8 +67,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './public/index.html',
     }),
-    new Dotenv({
-      path: '../.env',
+    new webpack.DefinePlugin({
+      'process.env': JSON.stringify(dotenv),
     }),
   ],
 };
