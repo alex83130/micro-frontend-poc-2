@@ -144,7 +144,7 @@ app.get('/api/ssr', (req, res) => {
                  return false;
               };
           </script>
-          <script type="text/javascript" src="${process.env.APP2_URL}main.js"></script>
+          <script type="text/javascript" src="${process.env.APP2_URL}/main.js"></script>
         </body>
       </html>`);
 });

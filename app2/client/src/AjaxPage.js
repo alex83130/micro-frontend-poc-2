@@ -21,22 +21,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function loadjscssfile(filename, filetype) {
-  if (filetype == 'js') {
-    //if filename is a external JavaScript file
-    let fileref = document.createElement('script');
-    fileref.setAttribute('type', 'text/javascript');
-    fileref.setAttribute('src', filename);
-  } else if (filetype == 'css') {
-    //if filename is an external CSS file
-    let fileref = document.createElement('link');
-    fileref.setAttribute('rel', 'stylesheet');
-    fileref.setAttribute('type', 'text/css');
-    fileref.setAttribute('href', filename);
-  }
-  if (typeof fileref != 'undefined') document.getElementsByTagName('head')[0].appendChild(fileref);
-}
-
 export default function AjaxPage() {
   const classes = useStyles();
   /*  const serviceContext = useServiceContext();
@@ -50,8 +34,6 @@ export default function AjaxPage() {
     fetch(`${__webpack_public_path__}api/ajax`)
       .then((res) => res.text())
       .then((data) => {
-        //loadjscssfile(data.js, "js")
-        //loadjscssfile(data.css, "css")
         setHTML(data);
       });
   }, []);

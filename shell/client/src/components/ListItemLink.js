@@ -16,7 +16,7 @@ function ListItemLink({ to, icon, text, legacy: _legacy }) {
     () =>
       React.forwardRef((linkProps, ref) =>
         isLegacy ? (
-          <a ref={ref} href={`${!_legacy ? process.env.SHELL_URL : ''}${to}`} {...linkProps} />
+          <a ref={ref} href={`${_legacy ? '' : process.env.SHELL_URL}${to}`} {...linkProps} />
         ) : (
           <Link ref={ref} to={to} {...linkProps} />
         )
