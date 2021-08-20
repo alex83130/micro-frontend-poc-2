@@ -1,16 +1,7 @@
 import React from 'react';
-import { makeStyles, Divider, Drawer, IconButton, List, Toolbar } from '@material-ui/core';
-import {
-  ChevronLeft as ChevronLeftIcon,
-  Dashboard as DashboardIcon,
-  ShoppingCart as ShoppingCartIcon,
-  Person as UserIcon,
-  Menu as MenuIcon,
-} from '@material-ui/icons';
+import { makeStyles, Divider, Drawer, IconButton, List } from '@material-ui/core';
+import { ChevronLeft as ChevronLeftIcon, Menu as MenuIcon } from '@material-ui/icons';
 import clsx from 'clsx';
-import { Link, useLocation } from 'react-router-dom';
-//import SettingsNavigation from "settings/Navigation";
-//import DashboardNavigation from "dashboard/Navigation";
 import App1Navigation from 'app1/Navigation';
 import App2Navigation from 'app2/Navigation';
 

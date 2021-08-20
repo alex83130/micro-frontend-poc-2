@@ -18,8 +18,10 @@ const setItem = (key, value, numberOfDays) => {
   document.cookie = `${key}=${value}; expires=${now.toUTCString()}; path=/`;
 };
 
+const convertBoolean = (value) => (value === 'true' ? true : value === 'false' ? false : value);
+
 const useCookie = (key, defaultValue) => {
-  const getCookie = () => getItem(key) || defaultValue;
+  const getCookie = () => convertBoolean(getItem(key)) || defaultValue;
 
   const [cookie, setCookie] = useState(getCookie());
 

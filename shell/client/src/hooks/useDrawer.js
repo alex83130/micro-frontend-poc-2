@@ -6,7 +6,7 @@ function useDrawer() {
   const { cookie, updateCookie } = useCookie('@micro-frontend-poc/appdrawer/open');
 
   return {
-    open: cookie === 'true',
+    open: !!cookie,
     closeDrawer() {
       console.log('closeDrawer');
 
