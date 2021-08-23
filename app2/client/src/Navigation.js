@@ -10,7 +10,7 @@ function Navigation() {
       <ListItemLink
         to={`${process.env.APP2_URL}/api/ssr`}
         icon={<ShoppingCartIcon />}
-        text="App2 - SSR"
+        text="App2 - SSR without Proxy"
         legacy={true}
       />
       <ListItemLink
