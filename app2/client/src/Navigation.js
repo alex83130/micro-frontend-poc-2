@@ -13,6 +13,12 @@ function Navigation() {
         text="App2 - SSR"
         legacy={true}
       />
+      <ListItemLink
+        to={`${__webpack_public_path__}api/ssr/proxy`}
+        icon={<ShoppingCartIcon />}
+        text="App2 - SSR with Proxy"
+        legacy={true}
+      />
     </>
   );
 }

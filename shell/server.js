@@ -6,7 +6,13 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 const PORT = process.env.PORT;
 const app = express();
 
-app.use(createProxyMiddleware('/api/ssr-2', { target: process.env.APP2_URL }));
+app.use(
+  createProxyMiddleware('/api/ssr/proxy', {
+    target: `${process.env.APP2_URL}/api/ssr`,
+    changeOrigin: true,
+    pathRewrite: { '^/api/ssr/proxy': '' },
+  })
+);
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('./client/dist'));
