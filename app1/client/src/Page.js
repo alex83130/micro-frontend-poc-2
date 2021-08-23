@@ -42,7 +42,7 @@ export default function SettingsPage() {
   const [orders, setOrders] = useState([]);
 
   React.useEffect(() => {
-    fetch(`${__webpack_public_path__}api/orders`)
+    fetch(`${process.env.APP1_URL}/api/orders`)
       .then((res) => res.json())
       .then((data) => {
         setOrders(data.orders);

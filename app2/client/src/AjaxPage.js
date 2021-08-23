@@ -31,7 +31,7 @@ export default function AjaxPage() {
   const [html, setHTML] = useState('');
 
   useLayoutEffect(() => {
-    fetch(`${__webpack_public_path__}api/ajax`)
+    fetch(`${process.env.APP2_URL}/api/ajax`)
       .then((res) => res.text())
       .then((data) => {
         setHTML(data);

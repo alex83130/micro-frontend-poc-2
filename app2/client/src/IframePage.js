@@ -37,7 +37,7 @@ export default function IframePage() {
             <Typography component="h1" variant="h6" color="primary" gutterBottom>
               App2 - Iframe
             </Typography>
-            <iframe src={`${__webpack_public_path__}api/iframe`} style={{ borderWidth: 0 }} />
+            <iframe src={`${process.env.APP2_URL}/api/iframe`} style={{ borderWidth: 0 }} />
           </Paper>
         </Grid>
       </Container>

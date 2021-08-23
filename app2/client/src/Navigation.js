@@ -8,13 +8,13 @@ function Navigation() {
       <ListItemLink to="/app2/ajax" icon={<ShoppingCartIcon />} text="App2 - Ajax" />
       <ListItemLink to="/app2/iframe" icon={<UserIcon />} text="App2 - Iframe" />
       <ListItemLink
-        to={`${__webpack_public_path__}api/ssr`}
+        to={`${process.env.APP2_URL}/api/ssr`}
         icon={<ShoppingCartIcon />}
         text="App2 - SSR"
         legacy={true}
       />
       <ListItemLink
-        to={`${process.env.SHELL_URL}api/ssr/proxy`}
+        to={`${process.env.SHELL_URL}/api/ssr/proxy`}
         icon={<ShoppingCartIcon />}
         text="App2 - SSR with Proxy"
         legacy={true}
